@@ -2,8 +2,9 @@
     session_start();
     require_once("../../db/connection.php");
 	include("../../controller/validarSesion.php");
-	$sql = "SELECT * FROM user, tip_user WHERE user = '".$_SESSION['usuario']."' AND user.id_tip_user = tip_user.id_tip_user";
-	$usuarios = mysqli_query($mysqli, $sql) or die(mysqli_error());
+
+	$sql = "SELECT * FROM usuario, tipousuario WHERE correo = '".$_SESSION['usuario']."' AND usuario.idtipousuario = tipousuario.idtipo";
+	$usuarios = mysqli_query($mysqli, $sql);
 	$usua = mysqli_fetch_assoc($usuarios);
 ?>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Menu Administrador</title>
+	<title>Menu Paciente</title>
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 

@@ -26,20 +26,17 @@ if($_POST["inicio"]){
 				
 		/// si es un admin
 		if($_SESSION['tipo'] == 1){
-			// header("Location: ../model/admin/index1.php"); 
-			header("Location: ../index.html");
+			header("Location: ../model/admin/index1.php"); 
 			exit();
 		}
 		/// si es un odontologo
 		elseif($_SESSION['tipo'] == 2){
-			// header("Location: ../model/odontologo/index1.php"); 
-			header("Location: ../hola.html");
+			header("Location: ../model/odontologo/index1.php"); 
 			exit();		
 		}
 		//si es paciente
 		elseif($_SESSION['tipo'] == 3){
-			// header("Location: ../model/paciente/index1.php"); 
-			header("Location: ../hola.html");
+			header("Location: ../model/paciente/index1.php"); 
 			exit();		
 		}
 		

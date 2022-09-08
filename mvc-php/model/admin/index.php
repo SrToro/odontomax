@@ -2,7 +2,7 @@
     require_once("../../db/connection.php");
     session_start();
     $query = "SELECT * FROM user, tip_user WHERE cedula = '".$_SESSION['id_user']."' AND user.id_tip_user = tip_user.id_tip_user";
-    $usuarios = mysqli_query($mysqli, $query) or die(mysqli_error());
+    $usuarios = mysqli_query($mysqli, $query);
     $row_usuarios = mysqli_fetch_assoc($usuarios);
 
 ?>
