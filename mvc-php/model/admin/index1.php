@@ -22,12 +22,16 @@
 <body>
 	<header>
 		<span id="button-menu" class="fa fa-bars"></span>
-		<span class="usuario"> <?php echo $usua['tip_user']?></span>
-		<span class="usuario"> 
-			<a href="../../controller/salir.php"><img src="../../controller/image/salir.png" width=30></a>
-			<?php echo $usua['nombres']?>
-		</span>
+		<br>
 		
+		<span class="usuario"> 
+			<h1><?php echo $usua['nombre'] ,' ',$usua['apellido']?></h1>
+			<span class="usuario"> Administrador </span>
+			<br>
+			<a class="usuario" style="margin-top:5%"href="../../controller/salir.php"><img src="../../controller/image/salir.png" width=30></a>
+			<br>
+		</span>
+
 		<nav class="navegacion">
 			<ul class="menu" >
 				<!-- TITULAR -->
