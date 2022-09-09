@@ -15,39 +15,41 @@ if ($_POST['cont']== "" || $_POST['conta']== "" )
 	{
     
         $doc = $_SESSION['ced'];
-        $insertSQL = "UPDATE user SET password ='$contra'  WHERE cedula = '$doc'";
-        mysqli_query($mysqli, $insertSQL) or die(mysqli_error());  	
-             echo '<script>alert (" Cambio de Clave Existosa ");</script>';
+        $insertSQL = "UPDATE usuario SET contrasena ='$contra'  WHERE documento = '$doc'";
+        mysqli_query($mysqli, $insertSQL);  	
+            echo '<script>alert (" Cambio de Clave Existosa ");</script>';
             echo '<script>window.location="../index.html"</script>';
     
     }
    
 }
 ?>
+
 <?php
 if($_POST["inicio"])
 {
 	// inicia sesion para los usuarios
 	$doc = $_POST["doc"];
-	$sql="select * from user where cedula = '$doc'"; 	
+	$sql="select * from usuario where documento = '$doc'"; 	
 	$query=mysqli_query($mysqli, $sql);
 	$fila=mysqli_fetch_assoc($query);
 	
 	if($fila)
     {		
 		/// si el usario  son correctas.
-        $_SESSION['ced']=$fila['cedula'];
+        $_SESSION['ced']=$fila['documento'];
     
     ?>
         <html>
             <head>
                 <link rel="stylesheet" href="../controller/css/style.css">
                 <meta charset="utf-8">
+                <link rel="shortcut icon" href="controller/image/iconoventana.png" type="image/x-icon">
             </head>
             <body>
                 <div class="login-box">
                     <!--crea una caja imaginaria-->
-                    <img src="../controller/image/logo.png" class="avatar" alt="Avatar Image">
+                    <img src="../controller/image/iconoiniciodesesion.jpg " class="avatar" alt="Avatar Image">
 
                         <!--insertamos una imagen-->
     
@@ -56,6 +58,7 @@ if($_POST["inicio"])
                             <label for="usuario">Nueva Contraseña</label>
                             <!-- etiqueta lo que se le muestra el usuario -->
                             <input type="text" name="cont" id="cont" placeholder="Nueva Clave" >
+
                             <label for="usuario">Confirme Contraseña</label>
                             <!-- etiqueta lo que se le muestra el usuario -->
                             <input type="text" name="conta" id="conta" placeholder="Confirme Clave">
