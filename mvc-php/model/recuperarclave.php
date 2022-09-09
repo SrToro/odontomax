@@ -45,6 +45,7 @@ if($_POST["inicio"])
                 <link rel="stylesheet" href="../controller/css/style.css">
                 <meta charset="utf-8">
                 <link rel="shortcut icon" href="controller/image/iconoventana.png" type="image/x-icon">
+                <title>Recuperar contraseña</title>
             </head>
             <body>
                 <div class="login-box">
