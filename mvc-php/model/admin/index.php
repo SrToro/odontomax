@@ -49,7 +49,7 @@ if(isset($_POST['btncerrar']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>taller</title>
+    <title>Administrador</title>
 </head>
     <body>
         <section class="title">
@@ -61,9 +61,9 @@ if(isset($_POST['btncerrar']))
             <ul class="menu wrapper" >
     
                 <li class="first-item">
-                    <a href="#">
+                    <a href="agreg_usu.php">
                         <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">OPCION 1</span>
+                        <span class="text-item">CREAR USUARIO</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
