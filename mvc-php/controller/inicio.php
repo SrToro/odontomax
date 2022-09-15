@@ -26,7 +26,7 @@ if($_POST["inicio"]){
 				
 		/// si es un admin
 		if($_SESSION['tipo'] == 1){
-			header("Location: ../model/admin/index1.php"); 
+			header("Location: ../model/admin/index.php"); 
 			exit();
 		}
 		/// si es un odontologo
