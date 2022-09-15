@@ -11,7 +11,7 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "fanadd")) 
+if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd")) 
     { 
         $tp = $_POST ['TIP_USU'];
         $sqladd = "SELECT * FROM tipousuario WHERE tipo ='$tp' ";
@@ -35,12 +35,8 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "fanadd"))
              echo '<script>alert (" Registro Exitoso!!  ");</script>';
              echo '<script>window.location="agreg_usu.php"</script>';
             }
-        
-            
-    
+
     }
-
-
 
 ?>
 <form method="POST">
@@ -85,12 +81,12 @@ if(isset($_POST['btncerrar']))
     <link rel="stylesheet" href="estilos.css">
     <title>Creacion Tipo de Usuario</title>
 </head>
-    <body>
+    <body onload="frmadd.TIP_USU.focus()">
         <section class="title">
-            <h1>FORMULARIO CREACION TIPO USUARIOS </h1>
+            <h1>FORMULARIO CREACION TIPO USUARIOS </h1> 
         </section>
         <table class="centrar">
-            <form method="POST" name="fanadd" autocomplete="off">
+            <form method="POST" name="frmadd" autocomplete="off">
                 <tr>
                     <td colspan="2">Tipos de Usuario</td>
                 </tr>
@@ -111,7 +107,7 @@ if(isset($_POST['btncerrar']))
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" name="btnadd" value="Guardar"></td>
-                    <input type="hidden" name="btnguardar" value="fanadd">
+                    <input type="hidden" name="btnguardar" value="frmadd">
                 </tr>
                 
                 
