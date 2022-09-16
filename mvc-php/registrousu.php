@@ -75,7 +75,8 @@
             <input type="text" name="direccion" placeholder="Ingrese su direccion" >
             <input type="number" name="telefono" placeholder="Ingrese su telefono" >
 
-            <input type="submit" name="validar" value="Registrarme">
+            <input style="margin-bottom: 5px;" type="submit" name="validar" value="Registrarme">
+            <a href="../mvc-php/index.html">Volver Pagina Principal</a>
             <input type="hidden" name="MM_insert" value="formreg">
         </form>
 
