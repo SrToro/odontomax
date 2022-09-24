@@ -83,7 +83,7 @@ if(isset($_POST['btncerrar']))
 </head>
     <body onload="frmadd.TIP_USU.focus()">
         <section class="title">
-            <h1>FORMULARIO CREACION TIPO USUARIOS </h1> 
+            <h1>FORMULARIO CREACION ODONTOLOGO</h1> 
         </section>
         <table class="centrar">
             <form method="POST" name="frmadd" autocomplete="off">
@@ -91,11 +91,7 @@ if(isset($_POST['btncerrar']))
                     <td colspan="2">Tipos de Usuario</td>
                 </tr>
                 
-                <tr>
-                    <td>Identificador</td>
-                    <td><input type="text" readonly></td>
-                </tr>
-                
+                              
                 <tr>
                     <!--// lowercase -->
                     <td>Tipo Usuario</td>

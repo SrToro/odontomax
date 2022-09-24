@@ -71,7 +71,7 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="#">
                         <img src="img/ejecucion.png" alt="" class="imagen">
-                        <span class="text-item">OPCION 2</span>
+                        <span class="text-item">VER USUARIOS</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
@@ -79,7 +79,7 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="#">
                         <img src="img/implementar.jpg" alt="" class="imagen">
-                        <span class="text-item">OPCION 3</span>
+                        <span class="text-item">VER HISTORIAS</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
@@ -87,7 +87,7 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="#">
                         <img src="img/planear.png" alt="" class="imagen">
-                        <span class="text-item">OPCION 4</span>
+                        <span class="text-item">VER CITAS</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
@@ -108,45 +108,7 @@ if(isset($_POST['btncerrar']))
                     </a>
                 </li>
     
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 7</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 8</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 9</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 10</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 11</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
+              
                 
             </ul>
             
