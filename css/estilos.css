@@ -184,6 +184,8 @@ main .sobre-nosotros{
 .cards{
     display: flex;
     justify-content: space-evenly;
+    gap: 10px;
+    padding: 0 6px;
 }
 
 .cards .card{
@@ -198,11 +200,11 @@ main .sobre-nosotros{
 }
 
 .cards .card img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+    width: 158px ;
+    height: 108px ;
+    object-fit: cover ;
     border: 3px solid #fff;
-    border-radius: 50%;
+    border-radius: 10% ;
     display: block;
 }
 
