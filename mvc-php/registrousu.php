@@ -6,14 +6,6 @@
 
 
 <?php
-    // $control = "SELECT * From tip_user WHERE id_tip_user >= 2";
-    // $query=mysqli_query($mysqli,$control);
-    // $fila=mysqli_fetch_assoc($query);
-?>
-
-
-
-<?php
     if ((isset($_POST["MM_insert"]))&&($_POST["MM_insert"]=="formreg"))
     {
         $cedula=    $_POST['documento'];

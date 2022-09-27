@@ -11,32 +11,53 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 
 <?php
-if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd")) 
-    { 
-        $tp = $_POST ['TIP_USU'];
-        $sqladd = "SELECT * FROM tipousuario WHERE tipo ='$tp' ";
-        $query = mysqli_query($mysqli,$sqladd);
-        $fila = mysqli_fetch_assoc($query);
-        if($fila)
-            {
-             echo '<script>alert (" El usuario ya existe ");</script>';
-             echo '<script>window.location="agreg_usu.php"</script>';
-            }
-        elseif ($_POST['TIP_USU'] == "")
-            {
-             echo '<script>alert (" Existen campos vacios  ");</script>';
-             echo '<script>window.location="agreg_usu.php"</script>';
-            }
-        else
-            {
-             $tp = $_POST ['TIP_USU'];
-             $sqladd = " INSERT INTO tipousuario(tipo) values ('$tp')";
-             $query = mysqli_query($mysqli,$sqladd);   
-             echo '<script>alert (" Registro Exitoso!!  ");</script>';
-             echo '<script>window.location="agreg_usu.php"</script>';
-            }
 
-    }
+        if ((isset($_POST["MM_insert"]))&&($_POST["MM_insert"]=="formreg"))
+        {
+            $cedula=            $_POST['documento'];
+            $clave=             $_POST['contrasena'];
+            $nombre=            $_POST['nombre'];
+            $apellido=          $_POST['apellido'];
+            $ntarjprof=         $_PSOT['numTarjProf'];
+            $direccion=         $_POST['direccion'];
+            $telefono=          $_POST['telefono'];
+            $correo=            $_POST['correo'];
+            $idtipousuario=     $_POST['tipousu'];
+            
+            
+    
+            $validar ="SELECT * FROM usuario WHERE documento='$cedula' or correo='$correo'";
+            $queryi=mysqli_query($mysqli,$validar);
+            $fila1=mysqli_fetch_assoc($queryi);
+        
+           if ($fila1) {
+               echo '<script>alert ("DOCUMENTO O USUARIO EXISTEN //CAMBIELOS//");</script>';
+               echo '<script>windows.location="agreg_usu.php"</script>';
+           }
+            else if ($cedula=="" || $nombre=="" || $correo=="" || $clave=="" || $apellido=="" || $direccion=="")
+            {
+                echo '<script>alert ("EXISTEN DATOS VACIOS");</script>';
+                echo '<script>windows.location="agreg_usu.php"</script>';
+            }
+            else if($idtipousuario=="2" && $ntarjprof=="0"){
+                echo '<script>alert ("El odontologo requiere de numero de tarjeta profesional");</script>';
+                echo '<script>windows.location="agreg_usu.php"</script>';
+            }
+            else if($idtipousuario=="1"|| $idtipousuario=="3")
+            {
+               $insertsql="INSERT INTO usuario(documento,contrasena,nombre,apellido,numTarjProf,direccion,telefono,correo,idtipousuario) VALUES('$cedula','$clave','$nombre','$apellido',NULL,'$direccion','$telefono','$correo','$idtipousuario')";
+               mysqli_query($mysqli,$insertsql);
+               echo '<script>alert (" Registro Exitoso, Gracias");</script>';
+               echo '<script>window.location="agreg_usu.php"</script>';
+            }
+            else{
+
+                $insertsql="INSERT INTO usuario(documento,contrasena,nombre,apellido,numTarjProf,direccion,telefono,correo,idtipousuario) VALUES('$cedula','$clave','$nombre','$apellido','$ntarjprof','$direccion','$telefono','$correo','$idtipousuario')";
+                mysqli_query($mysqli,$insertsql);
+                echo '<script>alert (" Registro Exitoso, Gracias");</script>';
+                echo '<script>window.location="agreg_usu.php"</script>';
+            }
+        }
 
 ?>
 <form method="POST">
@@ -81,35 +102,39 @@ if(isset($_POST['btncerrar']))
     <link rel="stylesheet" href="estilos.css">
     <title>Creacion Tipo de Usuario</title>
 </head>
-    <body onload="frmadd.TIP_USU.focus()">
+    <body>
         <section class="title">
             <h1>FORMULARIO CREACION ODONTOLOGO</h1> 
         </section>
         <table class="centrar">
-            <form method="POST" name="frmadd" autocomplete="off">
-                <tr>
-                    <td colspan="2">Tipos de Usuario</td>
-                </tr>
-                
+            <form method="POST" name="formreg" autocomplete="off">
                               
                 <tr>
-                    <!--// lowercase -->
-                    <td>Tipo Usuario</td>
-                    <td><input type="text" name="TIP_USU" placeholder="Ingrese tipo usuario" style="text-transform: uppercase;"></td>
+                    <!-- body para formulario -->
+
+                    <input type="number" name="documento" placeholder="Ingrese Documento Identidad" >
+                    <input type="password" name="contrasena" placeholder="Ingrese Contraseña" >
+                    <input type="text" name="nombre" placeholder="Ingrese Nombres Completos" >
+                    <input type="text" name="apellido" placeholder="Ingrese Apellidos Completos" >
+                    <input type="text" name="correo" placeholder="Ingrese su correo" >
+                    <input type="text" name="direccion" placeholder="Ingrese su direccion" >
+                    <input type="number" name="telefono" placeholder="Ingrese su telefono" >
+                    <input type="number" name="numTarjProf" placeholder="Ingrese el num de tarj prof" >
+                    <input type="text" name="tipousu" placeholder="Seleccione el tipo de usuario" list="listatipusu">
+                    <datalist id="listatipusu">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                    </datalist>
+                    <input style="margin-bottom: 5px;" type="submit" name="validar" value="Registrar usuario">
+                    <input type="hidden" name="MM_insert" value="formreg">
+
+
                 </tr>
-                
                 <tr>
                     <td colspan="2">&nbsp;</td>
                 </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" name="btnadd" value="Guardar"></td>
-                    <input type="hidden" name="btnguardar" value="frmadd">
-                </tr>
-                
-                
             </form>
-            
         </table>
-    
     </body>
 </html>
