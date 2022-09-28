@@ -95,7 +95,7 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="#">
                         <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 5</span>
+                        <span class="text-item">BORRAR USUARIO</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
