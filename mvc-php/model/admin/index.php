@@ -100,15 +100,6 @@ if(isset($_POST['btncerrar']))
                     </a>
                 </li>
     
-                <li class="first-item">
-                    <a href="#">
-                        <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">OPCION 6</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-              
                 
             </ul>
             
