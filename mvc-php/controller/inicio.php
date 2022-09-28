@@ -31,7 +31,7 @@ if($_POST["inicio"]){
 		}
 		/// si es un odontologo
 		elseif($_SESSION['tipo'] == 2){
-			header("Location: ../model/odontologo/index1.php"); 
+			header("Location: ../model/odontologo/index.php"); 
 			exit();		
 		}
 		//si es paciente
