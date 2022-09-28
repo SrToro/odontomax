@@ -70,7 +70,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="#">
-                        <img src="img/ejecucion.png" alt="" class="imagen">
+                        <img src="img/usuario.png" alt="" class="imagen">
                         <span class="text-item">VER USUARIOS</span>
                         <span class="down-item"></span>
                     </a>
@@ -78,7 +78,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="#">
-                        <img src="img/implementar.jpg" alt="" class="imagen">
+                        <img src="img/historia.png" alt="" class="imagen">
                         <span class="text-item">VER HISTORIAS</span>
                         <span class="down-item"></span>
                     </a>
@@ -86,7 +86,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="#">
-                        <img src="img/planear.png" alt="" class="imagen">
+                        <img src="img/vercita.png" alt="" class="imagen">
                         <span class="text-item">VER CITAS</span>
                         <span class="down-item"></span>
                     </a>
@@ -94,7 +94,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="#">
-                        <img src="" alt="" class="imagen">
+                    <img src="img/delete.png" alt="" class="imagen">
                         <span class="text-item">BORRAR USUARIO</span>
                         <span class="down-item"></span>
                     </a>
