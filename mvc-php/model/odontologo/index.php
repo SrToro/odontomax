@@ -10,10 +10,19 @@ $usua = mysqli_fetch_assoc($usuarios);
 
 ?>
 <form method="POST">
-    <div colspan='2' align=center>
-        <h1><?php echo $usua['nombre'] ,' ',$usua['apellido']?></h1>
-        <input style="border-radius:16px;height:50px; height:40px; width:100px" type="submit" value="Cerrar sesión" name="btncerrar" />
-    </div>
+
+    <tr>
+    <span class="usuario"> Odontologo</span>
+        <td colspan='2' align="center"><?php echo $usua['nombre'] ,' ',$usua['apellido']?></td>
+        
+    </tr>
+<tr><br>
+    <td colspan='2' align="center">
+    
+    
+        <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
+     
+    </tr>
 </form>
 
 <?php 
@@ -42,14 +51,13 @@ if(isset($_POST['btncerrar']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>Administrador</title>
+    <title>ODONTOLOGO</title>
 </head>
     <body>
-        <div class="tittle-bg">
-            <div class="title">
-                <h1>MENÚ ADMINISTRADOR</h1> 
-            </div>
-        </div>
+        <section class="title">
+            <h1>INTERFAZ  Odontologo <?php echo $usua['nombre'] ,' ',$usua['apellido']?> </h1>
+            
+        </section>
     
         <nav class="navegacion">
            
@@ -58,7 +66,7 @@ if(isset($_POST['btncerrar']))
                 <li class="first-item">
                     <a href="agreg_usu.php">
                         <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">CREAR USUARIO</span>
+                        <span class="text-item">CREAR INFORME</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
@@ -66,7 +74,7 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="#">
                         <img src="img/usuario.png" alt="" class="imagen">
-                        <span class="text-item">VER USUARIOS</span>
+                        <span class="text-item">VER HISTORIAS</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
@@ -74,7 +82,7 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="#">
                         <img src="img/historia.png" alt="" class="imagen">
-                        <span class="text-item">VER HISTORIAS</span>
+                        <span class="text-item">CITAS ODONTOLOGICAS</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
