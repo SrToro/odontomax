@@ -3,7 +3,7 @@
 session_start();
 require_once("../../db/connection.php");
 include("../../controller/validarSesion.php");
-$sql = "SELECT * FROM usuario, tipousuario WHERE correo = '".$_SESSION['usuario']."' AND usuario.idtipousuario = tipousuario.idtipo";
+$sql = "SELECT * FROM informe, usuario, tipousuario WHERE correo = '".$_SESSION['usuario']."' AND usuario.idtipousuario = tipousuario.idtipo";
 $usuarios = mysqli_query($mysqli, $sql);
 $usua = mysqli_fetch_assoc($usuarios);
 
@@ -21,7 +21,7 @@ $usua = mysqli_fetch_assoc($usuarios);
             $ntarjprof=         $_PSOT['numTarjProf'];
             $direccion=         $_POST['direccion'];
             $telefono=          $_POST['telefono'];
-            $correo=            $_POST['correo'];
+            $idinfome=            $_POST['correo'];
             $idtipousuario=     $_POST['tipousu'];
             
             
@@ -104,64 +104,45 @@ if(isset($_POST['btncerrar']))
 </head>
     <body>
         <section class="title">
-            <h1>FORMULARIO </h1> 
+            <h1>Nuevo Informe </h1> 
         </section>
         <table class="centrar" >
             <form method="POST" name="formreg" autocomplete="off">
                               
                 <tr>
-                    <td>Nombre de paciente</td>
-                    <td><input type="number" name="documento" placeholder="Ingrese Documento Identidad" ></td>
+                    <td>Id Paciente</td>
+                    <td><input type="number" name="documento" placeholder="Ingrese Documento Paciente" ></td>
                 </tr>
 
                 <tr>
-                    <td>Documento paciente</td>
-                    <td><input type="number" name="documento" placeholder="Ingrese Documento Identidad" ></td>    
+                    <td>Id Odontologo</td>
+                    <td><input type="number" name="documento" placeholder="Ingrese Documento Odontologo" ></td>
                 </tr>
 
                 <tr>
-                    <td>Fecha consulta</td>
-                    <td><input type="number" name="documento" placeholder="Ingrese Documento Identidad" ></td>   
+                    <td>Fecha del informe</td>
+                    <td><input type="number" name="documento" placeholder="Ingrese fecha del informe" ></td>    
+                </tr>
+
+                
+                <tr>
+                    <td>Recomendaciones</td>
+                    <td><input type="number" name="documento" placeholder="Ingrese Recomendaciones" ></td> 
                 </tr>
 
                 <tr>
-                    <td>Motivo consulta</td>
-                    <td><input type="number" name="documento" placeholder="Ingrese Documento Identidad" ></td> 
-                </tr>
-
-                <tr>
-                    <td>Indicadores de salud bucal</td>
-                    <td><input type="number" name="documento" placeholder="Ingrese Documento Identidad" ></td>
+                    <td>Medicamentos Formulados</td>
+                    <td><input type="number" name="documento" placeholder="Ingrese medicamentos" ></td>
                     
                 </tr>
+                
+                <tr>
+                    <td>Procedimiento realizado</td>
+                    <td><input type="number" name="documento" placeholder="Ingrese procedimiento realizado" ></td>
+                </tr>
                    
                    
-                   
-                    <!-- <input type="password" name="contrasena" placeholder="Ingrese Contraseña" >
-                    <td colspan='2' align="center">
-
-
-
-                    <input type="text" name="nombre" placeholder="Ingrese Nombres Completos" >
-                    <td colspan='2' align="center">
-                    <input type="text" name="apellido" placeholder="Ingrese Apellidos Completos" >
-                    <td colspan='2' align="center">
-                    <input type="text" name="correo" placeholder="Ingrese su correo" >
-                    <td colspan='2' align="center">
-                    <input type="text" name="direccion" placeholder="Ingrese su direccion" >
-                    <td colspan='2' align="center">
-                    <input type="number" name="telefono" placeholder="Ingrese su telefono" >
-                    <td colspan='2' align="center">
-                    <input type="number" name="numTarjProf" placeholder="Ingrese el num de tarj prof" >
-                    <td colspan='2' align="center">
-                    <input type="text" name="tipousu" placeholder="Seleccione el tipo de usuario" list="listatipusu">
-                    
-                        <datalist id="listatipusu">
-                        <option value="1">
-                        <option value="2">
-                        <option value="3">
-                        <td colspan='2' align="center">
-                    </datalist>-->
+                
                     
                     <td colspan='2' align="center"><input style="margin-bottom: 5px;" type="submit" name="validar" value="Guardar Formulario"> <td colspan='2' align="center">
                     
