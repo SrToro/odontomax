@@ -10,17 +10,10 @@ $usua = mysqli_fetch_assoc($usuarios);
 
 ?>
 <form method="POST">
-
-    <tr>
-        <td colspan='2' align="center"><?php echo $usua['nombre'] ,' ',$usua['apellido']?></td>
-    </tr>
-<tr><br>
-    <td colspan='2' align="center">
-    
-    
-        <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../index.php" value="Regresar" />
-    </tr>
+    <div colspan='2' align=center>
+        <h1><?php echo $usua['nombre'] ,' ',$usua['apellido']?></h1>
+        <input style="border-radius:16px;height:50px; height:40px; width:100px" type="submit" value="Cerrar sesión" name="btncerrar" />
+    </div>
 </form>
 
 <?php 
@@ -52,9 +45,11 @@ if(isset($_POST['btncerrar']))
     <title>Administrador</title>
 </head>
     <body>
-        <section class="title">
-            <h1>INTERFAZ   <?php echo $usua['nombre'] ,' ',$usua['apellido']?></h1>
-        </section>
+        <div class="tittle-bg">
+            <div class="title">
+                <h1>MENÚ ADMINISTRADOR</h1> 
+            </div>
+        </div>
     
         <nav class="navegacion">
            

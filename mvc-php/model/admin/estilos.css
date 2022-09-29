@@ -6,8 +6,10 @@
 	box-sizing: border-box;
 }
 
-body{
-	font-family: 'Century Gothic';
+
+body {
+    font-family: 'Century Gothic';
+	background-color: #239afc71;
 }
 
 a{
@@ -24,27 +26,32 @@ img{
 
 /*==========================================*/
 
-.title{
-	width: 100%;
-	background: #239afc;
-	height: 200px;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.title-bg{
+	height: 100vh;
+  	margin: 0;
+	  position: relative;
+  	background: #222;
 }
-
-.title h1{
-	color: #fff;
-	font-size: 34px;
+.title{
+	height: 126px;
+	background: linear-gradient(to bottom, #95cfff65, #63b9ffa7);
+  	position: relative;
+  	padding: 10px;
+}
+.tittle-bg h1{
 	font-weight: 200;
-	text-align: center;
+	text-align: center; 
+	background: #95cfff;
+	color: rgb(0, 0, 0);
+	padding: 2rem;
+	justify-content: center;
 }
 
 .navegacion{
 	width: 100%;
-	background: #1C1C1C;
-
+	height: 100%;
+	background: #95cfff;
 	display: flex;
 	justify-content: center;
 }
@@ -153,10 +160,60 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     grid-auto-rows: 100px;
-  }
-.centrar {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+}
+  
+.login-box {
+	margin-top: 20px;
+    width: 320px;
+    height: 600px;
+
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px ;
+	
 }
 
+.login-box input {
+	width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="number"],
+.login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid rgb(95, 94, 94);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+.login-box input[type="submit"]{
+    cursor: pointer;
+    background: #68edff;
+	border-color: #47f1f1;
+    color: rgb(0, 0, 0);
+}
+.login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #92f0fd;
+	border-color: #47f1f1;
+    color: rgb(0, 0, 0);
+}
+
+
+.login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(71, 68, 68);
+}
+
+.login-box a:hover {
+    color: #fff;
+}

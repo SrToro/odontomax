@@ -57,8 +57,8 @@
         <img src="controller/image/iconoiniciodesesion.jpg " class="avatar" alt="Imagen Avar">
                
         <form method="POST" name="formreg" autocomplete="off">
-            <label for="usuario"> REGISTRO DE USUARIOS </label>
 
+            <label for="usuario"> REGISTRO DE USUARIOS </label>
             <input type="number" name="documento" placeholder="Ingrese Documento Identidad" >
             <input type="password" name="contrasena" placeholder="Ingrese Contraseña" >
             <input type="text" name="nombre" placeholder="Ingrese Nombres Completos" >
@@ -72,8 +72,6 @@
             <input type="hidden" name="MM_insert" value="formreg">
         </form>
 
-
-    
     </div>
 </body>
 </html>

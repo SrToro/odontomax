@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once("../../db/connection.php");
@@ -6,8 +5,6 @@ include("../../controller/validarSesion.php");
 $sql = "SELECT * FROM usuario, tipousuario WHERE correo = '".$_SESSION['usuario']."' AND usuario.idtipousuario = tipousuario.idtipo";
 $usuarios = mysqli_query($mysqli, $sql);
 $usua = mysqli_fetch_assoc($usuarios);
-
-
 ?>
 
 <?php
@@ -18,7 +15,7 @@ $usua = mysqli_fetch_assoc($usuarios);
             $clave=             $_POST['contrasena'];
             $nombre=            $_POST['nombre'];
             $apellido=          $_POST['apellido'];
-            $ntarjprof=         $_PSOT['numTarjProf'];
+            $ntarjprof=         $_POST['numTarjProf'];
             $direccion=         $_POST['direccion'];
             $telefono=          $_POST['telefono'];
             $correo=            $_POST['correo'];
@@ -62,79 +59,64 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 <form method="POST">
 
-    <tr>
-        <td colspan='2' align="center"><?php echo $usua['nombre'] ,' ',$usua['apellido']?></td>
-    </tr>
-<tr><br>
-    <td colspan='2' align="center">
-    
-    
-        <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../index.php" value="Regresar" />
-    </tr>
+    <div colspan='2' align=center>
+        <h1><?php echo $usua['nombre'] ,' ',$usua['apellido']?></h1>
+        <input style="border-radius:16px;height:50px; height:40px; width:100px" type="submit"  value="Cerrar sesión" name="btncerrar" />
+        <input style="border-radius:16px;height:50px; height:40px; width:100px" type="submit" formaction="./index.php" value="Regresar" />
+    </div>
 </form>
-
 <?php 
 
 if(isset($_POST['btncerrar']))
 {
 	session_destroy();
-
-   
     header('location: ../../index.html');
 }
 	
 ?>
 
-</div>
-
-</div>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-    <title>Creacion Tipo de Usuario</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos.css">
+        <title>Creacion de Usuario</title>
+    </head>
     <body>
-        <section class="title">
-            <h1>FORMULARIO CREACION ODONTOLOGO</h1> 
-        </section>
-        <table class="centrar">
-            <form method="POST" name="formreg" autocomplete="off">
-                              
-                <tr>
-                    <!-- body para formulario -->
+        <div class="tittle-bg">
+            <div class="title">
+                <h1>FORMULARIO CREACION ODONTOLOGO</h1> 
+            </div>
+        </div>
 
-                    <input type="number" name="documento" placeholder="Ingrese Documento Identidad" >
-                    <input type="password" name="contrasena" placeholder="Ingrese Contraseña" >
-                    <input type="text" name="nombre" placeholder="Ingrese Nombres Completos" >
-                    <input type="text" name="apellido" placeholder="Ingrese Apellidos Completos" >
-                    <input type="text" name="correo" placeholder="Ingrese su correo" >
-                    <input type="text" name="direccion" placeholder="Ingrese su direccion" >
-                    <input type="number" name="telefono" placeholder="Ingrese su telefono" >
-                    <input type="number" name="numTarjProf" placeholder="Ingrese el num de tarj prof" >
-                    <input type="text" name="tipousu" placeholder="Seleccione el tipo de usuario" list="listatipusu">
-                    <datalist id="listatipusu">
-                        <option value="1">
-                        <option value="2">
-                        <option value="3">
-                    </datalist>
-                    <input style="margin-bottom: 5px;" type="submit" name="validar" value="Registrar usuario">
-                    <input type="hidden" name="MM_insert" value="formreg">
+        <div class="login-box">
+            <form method="POST" name="formreg" autocomplete="off">            
 
-
-                </tr>
+                <!-- body para formulario -->
+                <input type="number" name="documento" placeholder="Ingrese Documento Identidad" >
+                <input type="password" name="contrasena" placeholder="Ingrese Contraseña" >
+                <input type="text" name="nombre" placeholder="Ingrese Nombres Completos" >
+                <input type="text" name="apellido" placeholder="Ingrese Apellidos Completos" >
+                <input type="text" name="correo" placeholder="Ingrese su correo" >
+                <input type="text" name="direccion" placeholder="Ingrese su direccion" >
+                <input type="number" name="telefono" placeholder="Ingrese su telefono" >
+                <input type="number" name="numTarjProf" placeholder="Ingrese el num de tarj prof" >
+                <input type="text" name="tipousu" placeholder="Seleccione el tipo de usuario" list="listatipusu">
+                <datalist id="listatipusu">
+                    <option value="1">
+                    <option value="2">
+                    <option value="3">
+                </datalist>
+                <input style="margin-bottom:5px; border-radius:16px;height:50px;" type="submit" name="validar" value="Registrar usuario">
+                <input type="hidden" name="MM_insert" value="formreg">
                 <tr>
                     <td colspan="2">&nbsp;</td>
                 </tr>
             </form>
-        </table>
+            
+        </div>
     </body>
 </html>
