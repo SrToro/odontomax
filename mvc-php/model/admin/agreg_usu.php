@@ -60,7 +60,7 @@ $usua = mysqli_fetch_assoc($usuarios);
 <form method="POST">
 
     <div colspan='2' align=center>
-        <h1><?php echo $usua['nombre'] ,' ',$usua['apellido']?></h1>
+        <h1><?php echo $usua['nombre'] ,' ',$usua['apellido'], ' - Administrador'?> </h1>
         <input style="border-radius:16px;height:50px; height:40px; width:100px" type="submit"  value="Cerrar sesión" name="btncerrar" />
         <input style="border-radius:16px;height:50px; height:40px; width:100px" type="submit" formaction="./index.php" value="Regresar" />
     </div>
@@ -89,7 +89,7 @@ if(isset($_POST['btncerrar']))
     <body>
         <div class="tittle-bg">
             <div class="title">
-                <h1>FORMULARIO CREACION ODONTOLOGO</h1> 
+                <h1>FORMULARIO CREACION DE USUARIO</h1> 
             </div>
         </div>
 
@@ -105,9 +105,7 @@ if(isset($_POST['btncerrar']))
                 <input type="text" name="direccion" placeholder="Ingrese su direccion" >
                 <input type="number" name="telefono" placeholder="Ingrese su telefono" >
                 <input type="number" name="numTarjProf" placeholder="Ingrese el num de tarj prof" >
-                <!-- <input type="text" name="tipousu" placeholder="Seleccione el tipo de usuario"> -->
-                <label for="listatipusu" placeholder="seleccione el tipo de usuario"></label>
-                <select class="list-tip" id="listatipusu" name="tipousu" >
+                <select id="listatipusu" name="tipousu" >
                     <optgroup id="listatipusu">
                 <?php
                     $sqltipo="SELECT * FROM tipousuario";
@@ -119,7 +117,9 @@ if(isset($_POST['btncerrar']))
                     }
                 ?>
                     </optgroup>
+                    <i></i>
                 </select>
+                
                 <input style="margin-bottom:5px; border-radius:16px;height:50px;" type="submit" name="validar" value="Registrar usuario">
                 <input type="hidden" name="MM_insert" value="formreg">
                 <tr>
