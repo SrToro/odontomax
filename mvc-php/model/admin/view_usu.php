@@ -76,7 +76,6 @@ if(isset($_POST['btncerrar']))
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -105,21 +104,12 @@ if(isset($_POST['btncerrar']))
                 <input type="text" name="direccion" placeholder="Ingrese su direccion" >
                 <input type="number" name="telefono" placeholder="Ingrese su telefono" >
                 <input type="number" name="numTarjProf" placeholder="Ingrese el num de tarj prof" >
-                <!-- <input type="text" name="tipousu" placeholder="Seleccione el tipo de usuario"> -->
-                <label for="listatipusu" placeholder="seleccione el tipo de usuario"></label>
-                <select class="list-tip" id="listatipusu" name="tipousu" >
-                    <optgroup id="listatipusu">
-                <?php
-                    $sqltipo="SELECT * FROM tipousuario";
-                    $resultadotipusu=mysqli_query($mysqli,$sqltipo);
-                    while($mostrar=mysqli_fetch_array($resultadotipusu)){
-                ?>
-                        <option value="<?php echo $mostrar['idtipo'] ?>"><?php echo $mostrar['tipo']?></option>
-                <?php
-                    }
-                ?>
-                    </optgroup>
-                </select>
+                <input type="text" name="tipousu" placeholder="Seleccione el tipo de usuario" list="listatipusu">
+                <datalist id="listatipusu">
+                    <option value="1">
+                    <option value="2">
+                    <option value="3">
+                </datalist>
                 <input style="margin-bottom:5px; border-radius:16px;height:50px;" type="submit" name="validar" value="Registrar usuario">
                 <input type="hidden" name="MM_insert" value="formreg">
                 <tr>

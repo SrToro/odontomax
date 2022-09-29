@@ -64,7 +64,7 @@ if(isset($_POST['btncerrar']))
                 </li>
     
                 <li>
-                    <a href="#">
+                    <a href="view_usu.php">
                         <img src="img/usuario.png" alt="" class="imagen">
                         <span class="text-item">VER USUARIOS</span>
                         <span class="down-item"></span>
