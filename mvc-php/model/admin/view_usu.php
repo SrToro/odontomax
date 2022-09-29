@@ -57,9 +57,9 @@ if(isset($_POST['btncerrar']))
                 </tr>
                 
                 <?php
-                    $sqltipo="SELECT * FROM usuario";
-                    $resultadotipusu=mysqli_query($mysqli,$sqltipo);
-                    while($mostrar=mysqli_fetch_array($resultadotipusu)){
+                    $sqlusu="SELECT * FROM usuario";
+                    $resultadousu=mysqli_query($mysqli,$sqlusu);
+                    while($mostrar=mysqli_fetch_array($resultadousu)){
                 ?>   
                 <tr >
                     <td><?php echo $mostrar['documento']?></td>
@@ -70,7 +70,13 @@ if(isset($_POST['btncerrar']))
                     <td><?php echo $mostrar['direccion']?></td>
                     <td><?php echo $mostrar['telefono']?></td>
                     <td><?php echo $mostrar['correo']?></td>
-                    <td><?php echo $mostrar['idtipousuario']?></td>
+                    <?php
+                        $idtipousu= $mostrar['idtipousuario'];
+                        $sqltipo="SELECT tipo FROM tipousuario WHERE idtipo = '$idtipousu' ";
+                        $resultadotipusu=mysqli_query($mysqli,$sqltipo);
+                        $show=mysqli_fetch_array($resultadotipusu);
+                    ?>
+                    <td><?php echo $show['tipo']?></td>
                     <td><h3><a href='eliminar.php?documento=<?php echo $mostrar['documento'];?>'><i class="bi bi-trash"></i></a></td></h3>
                 </tr>
                 <?php
