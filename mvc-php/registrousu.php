@@ -68,7 +68,7 @@
             <input type="number" name="telefono" placeholder="Ingrese su telefono" >
 
             <input style="margin-bottom: 5px;" type="submit" name="validar" value="Registrarme">
-            <a href="../mvc-php/index.html">Volver Pagina Principal</a>
+            <a href="../mvc-php/index.html">Volver</a>
             <input type="hidden" name="MM_insert" value="formreg">
         </form>
 
