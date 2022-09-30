@@ -78,7 +78,8 @@ if(isset($_POST['btncerrar']))
                         $show=mysqli_fetch_array($resultadotipusu);
                     ?>
                     <td><?php echo $show['tipo']?></td>
-                    <td><h3><a href='eliminar.php?documento=<?php echo $mostrar['documento'];?>'><i class="bi bi-trash"></i></a></td></h3>
+                    <td><h2><a href='eliminar.php?documento=<?php echo $mostrar['documento'];?>'><i class="bi bi-trash"></i></a></h2></td>
+                    <td><h2><a href='editar.php?documento=<?php echo $mostrar['documento'];?>'><i class="bi bi-pencil-square"></i></a></h2></td>
                 </tr>
                 <?php
                     }
